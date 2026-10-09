@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Scan reports
+report.txt
+*.log
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
