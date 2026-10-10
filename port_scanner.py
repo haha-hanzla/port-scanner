@@ -116,7 +116,7 @@ def save_report(filename, target, ip, ports_scanned, open_ports, started, finish
     """Write the scan results to a text file."""
     with open(filename, "w", encoding="utf-8") as report:
         report.write("PORT SCAN REPORT\n")
-        report.write("=" * 40 + "\n")
+        report.write("\n")
         report.write(f"Target        : {target} ({ip})\n")
         report.write(f"Started       : {started:%Y-%m-%d %H:%M:%S}\n")
         report.write(f"Finished      : {finished:%Y-%m-%d %H:%M:%S}\n")
@@ -165,11 +165,11 @@ def main():
         print("[!] Error: timeout and threads must be greater than 0")
         sys.exit(1)
 
-    print("-" * 50)
+    print()
     print(f"Scanning target : {args.target} ({ip})")
     print(f"Ports           : {len(ports)} port(s)")
     print(f"Started at      : {datetime.now():%Y-%m-%d %H:%M:%S}")
-    print("-" * 50)
+    print()
 
     started = datetime.now()
     try:
@@ -179,7 +179,7 @@ def main():
         sys.exit(0)
     finished = datetime.now()
 
-    print("-" * 50)
+    print()
     print(f"Scan finished in {(finished - started).total_seconds():.2f} seconds")
     print(f"Open ports found: {len(open_ports)}")
 
